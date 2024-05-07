@@ -26,22 +26,19 @@ class maxTest {
 	void test() {
 		float maxEsperada=3;
 		float maxObtenida1=MisArrays.maxNotas(arrayValido);
-		float maxObtenida2=MisArrays.maxNotas(arrayNoValido);
-		float maxObtenida3=MisArrays.maxNotas(arrayVacio);
 		assertEquals(maxEsperada,maxObtenida1);
-		assertEquals(maxEsperada,maxObtenida2);
-		assertEquals(maxEsperada,maxObtenida3);
+
 	}
 	@Test
-	void medianaArrayVacia() {
-		Exception excepcion=assertThrows(IllegalArgumentException.class,() ->MisArrays.medianaNotas(arrayVacio));
+	void maxArrayVacia() {
+		Exception excepcion=assertThrows(IllegalArgumentException.class,() ->MisArrays.maxNotas(arrayVacio));
 		String esperado= "La array esta vacia";
 		String obtenido=excepcion.getMessage();
 		assertEquals(esperado,obtenido);	
 	}
 	@Test
-	void mediaParamIncorrecto() {
-		Exception excepcion=assertThrows(IllegalArgumentException.class,() ->MisArrays.medianaNotas(arrayVacio));
+	void maxParamIncorrecto() {
+		Exception excepcion=assertThrows(IllegalArgumentException.class,() ->MisArrays.maxNotas(arrayNoValido));
 		String esperado= "Hay al menos un valor en la array fuera del rango";
 		String obtenido=excepcion.getMessage();
 		assertEquals(esperado,obtenido);	

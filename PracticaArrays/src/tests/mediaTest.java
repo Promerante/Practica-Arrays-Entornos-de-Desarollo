@@ -30,13 +30,9 @@ class mediaTest {
 
 	@Test
 	void test() {
-		float mediaEsperada=6;
+		float mediaEsperada=2;
 		float mediaObtenida1=MisArrays.mediaNotas(arrayValido);
-		float mediaObtenida2=MisArrays.mediaNotas(arrayNoValido);
-		float mediaObtenida3=MisArrays.mediaNotas(arrayVacio);
 		assertEquals(mediaEsperada,mediaObtenida1);
-		assertEquals(mediaEsperada,mediaObtenida2);
-		assertEquals(mediaEsperada,mediaObtenida3);
 	}
 	@Test
 	void mediaArrayVacia() {
@@ -44,6 +40,14 @@ class mediaTest {
 		String esperado= "La array esta vacia";
 		String obtenido=excepcion.getMessage();
 		assertEquals(esperado,obtenido);	
+	}
+	
+	@Test
+	void mediaParamIncorrecto() {
+		Exception excepcion=assertThrows(IllegalArgumentException.class,() ->MisArrays.mediaNotas(arrayNoValido));
+		String esperado= "Hay al menos un valor en la array fuera del rango";
+		String obtenido=excepcion.getMessage();
+		assertEquals(esperado,obtenido);
 	}
 
 

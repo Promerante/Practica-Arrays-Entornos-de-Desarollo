@@ -23,11 +23,8 @@ class medianatest {
 	void test() {
 		float medianaEsperada=2;
 		float medianaObtenida1=MisArrays.medianaNotas(arrayValido);
-		float medianaObtenida2=MisArrays.medianaNotas(arrayNoValido);
-		float medianaObtenida3=MisArrays.medianaNotas(arrayVacio);
 		assertEquals(medianaEsperada,medianaObtenida1);
-		assertEquals(medianaEsperada,medianaObtenida2);
-		assertEquals(medianaEsperada,medianaObtenida3);
+
 	}
 	@Test
 	void medianaArrayVacia() {
@@ -37,8 +34,8 @@ class medianatest {
 		assertEquals(esperado,obtenido);	
 	}
 	@Test
-	void mediaParamIncorrecto() {
-		Exception excepcion=assertThrows(IllegalArgumentException.class,() ->MisArrays.medianaNotas(arrayVacio));
+	void medianaParamIncorrecto() {
+		Exception excepcion=assertThrows(IllegalArgumentException.class,() ->MisArrays.medianaNotas(arrayNoValido));
 		String esperado= "Hay al menos un valor en la array fuera del rango";
 		String obtenido=excepcion.getMessage();
 		assertEquals(esperado,obtenido);	

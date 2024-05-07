@@ -26,11 +26,7 @@ class minTest {
 	void test() {
 		float minEsperada=1;
 		float minObtenida1=MisArrays.minNotas(arrayValido);
-		float minObtenida2=MisArrays.minNotas(arrayNoValido);
-		float minObtenida3=MisArrays.minNotas(arrayVacio);
 		assertEquals(minEsperada,minObtenida1);
-		assertEquals(minEsperada,minObtenida2);
-		assertEquals(minEsperada,minObtenida3);
 	}
 	@Test
 	void minArrayVacia() {
@@ -41,7 +37,7 @@ class minTest {
 	}
 	@Test
 	void minParamIncorrecto() {
-		Exception excepcion=assertThrows(IllegalArgumentException.class,() ->MisArrays.minNotas(arrayVacio));
+		Exception excepcion=assertThrows(IllegalArgumentException.class,() ->MisArrays.minNotas(arrayNoValido));
 		String esperado= "Hay al menos un valor en la array fuera del rango";
 		String obtenido=excepcion.getMessage();
 		assertEquals(esperado,obtenido);	

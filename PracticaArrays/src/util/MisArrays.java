@@ -12,24 +12,20 @@ package util;
 		public static float mediaNotas(float[] array) {
 			float media=0;
 			int poblacion=0;
-			try { 
+				if(array.length==0) {
+					throw new IllegalArgumentException("La array esta vacia");
+				}
 				for(int a=0;a<array.length;a++) {
 					if(array[a]<0||array[a]>10) {
-						throw new IllegalArgumentException("El valor de la array en la posicion "+a+" es menor que 0 o mayor que 10.");
+						throw new IllegalArgumentException("Hay al menos un valor en la array fuera del rango");
 					}
 					media+=array[a];
 					poblacion++;
-				}
-				if(poblacion==0) {
-					throw new IllegalArgumentException("La array esta vacia");
-				}
+				}			
 				media/=poblacion;	
-			} 
-			catch (IllegalArgumentException e) {
-				System.out.println(e.getMessage());	
-			}
 			return media;
 		}
+		
 		/**
 		 * Observa la mediana de la array
 		 * @param array a la que hacer mediana
@@ -37,7 +33,6 @@ package util;
 		 */
 		public static float medianaNotas(float[] array) {
 			float mediana=0;
-			try {
 				if(array.length==0) {
 					throw new IllegalArgumentException("La array esta vacia");
 				}
@@ -52,10 +47,6 @@ package util;
 				else {
 					mediana=array[(array.length/2)];	
 				}
-			} 
-			catch (IllegalArgumentException e) {
-				System.out.println(e.getMessage());	
-			}		
 			return mediana;
 		}
 		/**
@@ -65,7 +56,6 @@ package util;
 		 */
 		public static int maxNotas(float[] array) {
 			int max=0;
-			try {
 				if(array.length==0) {
 					throw new IllegalArgumentException("La array esta vacia");
 				}
@@ -76,12 +66,7 @@ package util;
 					else if(array[a]>max) {
 						max=(int)array[a];
 					}
-				}
-				
-			} 
-			catch (IllegalArgumentException e) {
-				System.out.println(e.getMessage());	
-			}		
+				}	
 			return max;
 		}
 		/**
@@ -91,7 +76,6 @@ package util;
 		 */
 		public static int minNotas(float[] array) {
 			int min=11;//OJO:este metodo supone de que las notas van de 0 a 10
-			try {
 				if(array.length==0) {
 					throw new IllegalArgumentException("La array esta vacia");
 				}
@@ -102,12 +86,7 @@ package util;
 					else if(array[a]<min) {
 						min=(int)array[a];
 					}
-				}
-				
-			} 
-			catch (IllegalArgumentException e) {
-				System.out.println(e.getMessage());	
-			}		
+				}		
 			return min;
 		}
 		
