@@ -2,11 +2,14 @@ package tests;
 
 import static org.junit.Assert.assertThrows;
 import static org.junit.jupiter.api.Assertions.*;
+
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
+
 import util.MisArrays;
 
-class medianatest {
+class maxTest {
+
 	static float[] arrayValido;
 	static float[] arrayNoValido;
 	static float[] arrayVacio;
@@ -21,13 +24,13 @@ class medianatest {
 
 	@Test
 	void test() {
-		float medianaEsperada=2;
-		float medianaObtenida1=MisArrays.medianaNotas(arrayValido);
-		float medianaObtenida2=MisArrays.medianaNotas(arrayNoValido);
-		float medianaObtenida3=MisArrays.medianaNotas(arrayVacio);
-		assertEquals(medianaEsperada,medianaObtenida1);
-		assertEquals(medianaEsperada,medianaObtenida2);
-		assertEquals(medianaEsperada,medianaObtenida3);
+		float maxEsperada=3;
+		float maxObtenida1=MisArrays.maxNotas(arrayValido);
+		float maxObtenida2=MisArrays.maxNotas(arrayNoValido);
+		float maxObtenida3=MisArrays.maxNotas(arrayVacio);
+		assertEquals(maxEsperada,maxObtenida1);
+		assertEquals(maxEsperada,maxObtenida2);
+		assertEquals(maxEsperada,maxObtenida3);
 	}
 	@Test
 	void medianaArrayVacia() {

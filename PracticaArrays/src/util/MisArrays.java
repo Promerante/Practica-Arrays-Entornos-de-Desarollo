@@ -58,6 +58,32 @@ package util;
 			}		
 			return mediana;
 		}
+		/**
+		 * Observa la nota maxima de la array
+		 * @param array a la que buscar el max
+		 * @return valor maximo de nota
+		 */
+		public static float maxNotas(float[] array) {
+			float max=0;
+			try {
+				if(array.length==0) {
+					throw new IllegalArgumentException("La array esta vacia");
+				}
+				for(int a=0;a<array.length;a++) {
+					if(array[a]<0||array[a]>10) {
+						throw new IllegalArgumentException("Hay al menos un valor en la array fuera del rango");
+					}
+					else if(array[a]>max) {
+						max=array[a];
+					}
+				}
+				
+			} 
+			catch (IllegalArgumentException e) {
+				System.out.println(e.getMessage());	
+			}		
+			return max;
+		}
 		
 		
 
