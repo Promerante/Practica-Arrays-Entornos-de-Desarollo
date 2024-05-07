@@ -63,8 +63,8 @@ package util;
 		 * @param array a la que buscar el max
 		 * @return valor maximo de nota
 		 */
-		public static float maxNotas(float[] array) {
-			float max=0;
+		public static int maxNotas(float[] array) {
+			int max=0;
 			try {
 				if(array.length==0) {
 					throw new IllegalArgumentException("La array esta vacia");
@@ -74,7 +74,7 @@ package util;
 						throw new IllegalArgumentException("Hay al menos un valor en la array fuera del rango");
 					}
 					else if(array[a]>max) {
-						max=array[a];
+						max=(int)array[a];
 					}
 				}
 				
@@ -83,6 +83,32 @@ package util;
 				System.out.println(e.getMessage());	
 			}		
 			return max;
+		}
+		/**
+		 * Observa la nota minima de la array
+		 * @param array a la que buscar el min
+		 * @return valor minimo de nota
+		 */
+		public static int minNotas(float[] array) {
+			int min=11;//OJO:este metodo supone de que las notas van de 0 a 10
+			try {
+				if(array.length==0) {
+					throw new IllegalArgumentException("La array esta vacia");
+				}
+				for(int a=0;a<array.length;a++) {
+					if(array[a]<0||array[a]>10) {
+						throw new IllegalArgumentException("Hay al menos un valor en la array fuera del rango");
+					}
+					else if(array[a]<min) {
+						min=(int)array[a];
+					}
+				}
+				
+			} 
+			catch (IllegalArgumentException e) {
+				System.out.println(e.getMessage());	
+			}		
+			return min;
 		}
 		
 		
