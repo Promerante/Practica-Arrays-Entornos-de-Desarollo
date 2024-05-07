@@ -30,6 +30,35 @@ package util;
 			}
 			return media;
 		}
+		/**
+		 * Observa la mediana de la array
+		 * @param array a la que hacer mediana
+		 * @return valor que en el intermedio de la array
+		 */
+		public static float medianaNotas(float[] array) {
+			float mediana=0;
+			try {
+				if(array.length==0) {
+					throw new IllegalArgumentException("La array esta vacia");
+				}
+				for(int a=0;a<array.length;a++) {
+					if(array[a]<0||array[a]>10) {
+						throw new IllegalArgumentException("Hay al menos un valor en la array fuera del rango");
+					}
+				}
+				if(array.length%2==0) {
+					mediana=(array[array.length/2]+array[(array.length/2)+1])/2;
+				}
+				else {
+					mediana=array[(array.length/2)];	
+				}
+			} 
+			catch (IllegalArgumentException e) {
+				System.out.println(e.getMessage());	
+			}		
+			return mediana;
+		}
+		
 		
 
 	}

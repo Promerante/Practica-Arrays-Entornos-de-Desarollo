@@ -15,7 +15,7 @@ import util.MisArrays;
 /**
  * 
  */
-class MisArraysTest {
+class mediaTest {
 	static float[] arrayValido;
 	static float[] arrayNoValido;
 	static float[] arrayVacio;
@@ -39,7 +39,7 @@ class MisArraysTest {
 		assertEquals(mediaEsperada,mediaObtenida3);
 	}
 	@Test
-	void mediaParamIncorrecto() {
+	void mediaArrayVacia() {
 		Exception excepcion=assertThrows(IllegalArgumentException.class,() ->MisArrays.mediaNotas(arrayVacio));
 		String esperado= "La array esta vacia";
 		String obtenido=excepcion.getMessage();
